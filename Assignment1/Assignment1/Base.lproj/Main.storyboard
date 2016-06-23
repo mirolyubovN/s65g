@@ -111,8 +111,8 @@
                                                 <rect key="frame" x="160" y="66" width="118" height="31"/>
                                             </slider>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i7r-HW-XMZ">
-                                                <rect key="frame" x="84" y="115" width="156" height="30"/>
-                                                <state key="normal" title="I am a reset button yay"/>
+                                                <rect key="frame" x="77" y="115" width="170" height="30"/>
+                                                <state key="normal" title="I am the reset button yay"/>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -120,12 +120,12 @@
                                             <constraint firstItem="GA6-KE-BXL" firstAttribute="top" secondItem="2S2-6V-ywH" secondAttribute="top" constant="70" id="2nB-px-iv5"/>
                                             <constraint firstAttribute="bottom" secondItem="Ut1-ut-mxw" secondAttribute="bottom" constant="106" id="9QE-VJ-RuQ"/>
                                             <constraint firstItem="i7r-HW-XMZ" firstAttribute="top" secondItem="2S2-6V-ywH" secondAttribute="top" constant="115" id="ASU-Xb-HkV"/>
-                                            <constraint firstItem="i7r-HW-XMZ" firstAttribute="leading" secondItem="2S2-6V-ywH" secondAttribute="leading" constant="84" id="J3x-gc-vNC"/>
+                                            <constraint firstItem="i7r-HW-XMZ" firstAttribute="leading" secondItem="2S2-6V-ywH" secondAttribute="leading" constant="77" id="J3x-gc-vNC"/>
                                             <constraint firstAttribute="trailing" secondItem="GA6-KE-BXL" secondAttribute="trailing" constant="186" id="KIO-92-nOo"/>
                                             <constraint firstAttribute="trailing" secondItem="vPL-rg-BJn" secondAttribute="trailing" constant="49" id="MnM-YS-DEE"/>
                                             <constraint firstItem="EBc-4o-u5m" firstAttribute="top" secondItem="2S2-6V-ywH" secondAttribute="top" constant="24" id="NOz-Ms-vjA"/>
                                             <constraint firstItem="GA6-KE-BXL" firstAttribute="leading" secondItem="2S2-6V-ywH" secondAttribute="leading" constant="20" id="PVP-bQ-Pck"/>
-                                            <constraint firstAttribute="trailing" secondItem="i7r-HW-XMZ" secondAttribute="trailing" constant="85" id="QKY-kJ-bbB"/>
+                                            <constraint firstAttribute="trailing" secondItem="i7r-HW-XMZ" secondAttribute="trailing" constant="78" id="QKY-kJ-bbB"/>
                                             <constraint firstAttribute="bottom" secondItem="vPL-rg-BJn" secondAttribute="bottom" constant="152" id="REY-Jj-0V4"/>
                                             <constraint firstItem="Ut1-ut-mxw" firstAttribute="top" secondItem="2S2-6V-ywH" secondAttribute="top" constant="66" id="Teu-3X-fKH"/>
                                             <constraint firstAttribute="bottom" secondItem="EBc-4o-u5m" secondAttribute="bottom" constant="157" id="Wzo-nM-11h"/>
