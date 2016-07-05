@@ -188,3 +188,48 @@ class TwoDimensional {
     }
 }
 
+//This code was used in problem 2 to calculate the number of living neighbours and determine the state of the cell in the next itteration. The code was embedded inside  @IBAction func in problem 2. 
+/*var previousRow = (row + rows-1) % rows
+ var nextRow = (row+1)%rows
+ var previousCol = (col + columns-1) % columns
+ var nextCol = (col+1) % columns
+ 
+ //checking for living neighbors
+ if beforeArray[row][nextCol]{
+ aliveNeighbours+=1
+ }
+ if beforeArray[nextRow][nextCol]{
+ aliveNeighbours+=1
+ }
+ if beforeArray[nextRow][col]{
+ aliveNeighbours+=1
+ }
+ if beforeArray[row][previousCol]{
+ aliveNeighbours+=1
+ }
+ if beforeArray[previousRow][nextCol]{
+ aliveNeighbours+=1
+ }
+ if beforeArray[previousRow][previousCol]{
+ aliveNeighbours+=1
+ }
+ if beforeArray[nextRow][previousCol]{
+ aliveNeighbours+=1
+ }
+ 
+ if beforeArray[previousRow][col]{
+ aliveNeighbours+=1
+ 
+ 
+ 
+ switch aliveNeighbours {
+ 
+ case 0..<2 : afterArray [row][col] = false
+ 
+ case 2,3 : afterArray [row][col] = true
+ 
+ default : afterArray [row][col] = false
+ }
+ aliveNeighbours = 0
+ }*/
+
