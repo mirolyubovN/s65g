@@ -81,6 +81,10 @@
                             <constraint firstItem="6qx-A2-KyP" firstAttribute="height" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.8" constant="0.80000000000000004" id="tpZ-nv-bU3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gridView" destination="6qx-A2-KyP" id="V2h-0t-6kn"/>
+                        <outlet property="tapGesture" destination="tkD-Fu-q3o" id="lwO-ia-Hu3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="tkD-Fu-q3o"/>

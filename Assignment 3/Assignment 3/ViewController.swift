@@ -15,8 +15,10 @@ let afterArray = TwoDimensional (columns: beforeArray.columnsMax, rows: beforeAr
 
 class ViewController: UIViewController {
     
-    //@IBOutlet weak var gridView: GridView!
+    
+    @IBOutlet var tapGesture: UITapGestureRecognizer!
 
+    @IBOutlet weak var gridView: GridView!
     //var gridView: GridView = GridView()
 
     override func viewDidLoad() {
@@ -29,28 +31,15 @@ class ViewController: UIViewController {
     
         beforeArray.twoDimensionalArray = afterArray.twoDimensionalArray
         afterArray.twoDimensionalArray = step(beforeArray.twoDimensionalArray) //getting the value of afterarray by executing step
-        //gridView.setNeedsDisplay() // causes error
-        //gridView.counter++ // causes error
-        //GridView.clearsContextBeforeDrawing = true
-       // GridView.setNeedsDisplay()
+        
+        gridView.setNeedsDisplay()
+       
         
         print(beforeArray.prettyPrint(beforeArray.twoDimensionalArray))
         print(afterArray.prettyPrint(afterArray.twoDimensionalArray)) //checking the result of itteration.
         
         
-        
-        /*if (gridView.changesNeeded)          // causes error
-        {
-            gridView.counter++
-            gridView.setNeedsDisplay()
-        }
-        else {
-            gridView.counter=0
-        }
-        //print(counter)
-    }*/
-    
-    }
+          }
 
     
     override func didReceiveMemoryWarning() {
@@ -98,9 +87,6 @@ class ViewController: UIViewController {
         
     var grid = [[CellState]]()
         
-        
-        
-       // afterArray.twoDimensionalArray = step(beforeArray.twoDimensionalArray) //getting the value of afterarray by executing step
         
         
         
@@ -230,11 +216,74 @@ func countAliveCells (beforeArray:[[Bool]], rows:Int, columns:Int)-> Int {
             rowNum+=1
         }
         
-        
+    
 
     }
-        
-        //var changesNeeded:Bool=true
+        override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+            if let touch = touches.first {
+                let position :CGPoint = touch.locationInView(self)
+                print("x coord:")
+                print(position.x)
+                print("y coord:")
+                print(position.y)
+                /*
+                var rowNum = CGFloat (0.0)
+                var colNum = CGFloat (0.0)
+                let pi:CGFloat = CGFloat(M_PI)
+                let radius = (bounds.width/CGFloat(rows+2)-gridWidth)/4
+                let arcWidth: CGFloat = 2*radius
+                let startAngle: CGFloat = 0
+                let endAngle: CGFloat = 2*pi
+                
+                //drawing cicrles (cells)
+                let forrad = 4*radius+gridWidth
+                for row in 0..<rows {
+                    for column in 0..<columns {
+                        let center = CGPoint(x:(bounds.width/CGFloat(rows+2)*1.5-gridWidth)+rowNum*(forrad),
+                                             y:(bounds.height/CGFloat(rows+2)*1.5-gridWidth+colNum*(forrad)))
+                        
+                        if (position.x>=center.x-5&&position.x<=center.x+5&&position.y>=center.y-5&&position.y<=center.y+5){
+                            let circlePath = UIBezierPath(arcCenter: center,
+                                                          radius: radius,
+                                                          startAngle: startAngle,
+                                                          endAngle: endAngle,
+                                                          clockwise: true)
+                            circlePath.lineWidth = arcWidth
+                            var mystr = grid[row][column]
+                            var state = mystr.description()
+                            
+                            switch state {
+                            case "Living" :mystr.toggle(.Living)
+                            case "Empty" : mystr.toggle(.Empty)
+                            case "Born" : mystr.toggle(.Born)
+                            case "Died" : mystr.toggle(.Died)
+                            default: break
+                            }
+                            state = mystr.description()
+                            switch state {
+                            case "Living" : livingColour.setStroke()
+                            case "Empty" : emptyColour.setStroke()
+                            case "Born" : bornColour.setStroke()
+                            case "Died" : diedColour.setStroke()
+                            default : UIColor.blueColor().setStroke()
+
+                            
+                            }
+                         circlePath.stroke()
+                        }
+                        
+                       
+                        colNum+=1
+                    }
+                    colNum=0
+                    rowNum+=1
+                }
+                */
+
+                
+             }
+
+        }
 }
 
 
