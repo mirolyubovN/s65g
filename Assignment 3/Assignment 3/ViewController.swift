@@ -68,13 +68,8 @@ class ViewController: UIViewController {
             }
         }
         
-        @IBInspectable var counter: Int = 0 {
-            didSet {
-                clearsContextBeforeDrawing = true
-                    setNeedsDisplay()
-                
-            }
-        }
+        
+        
     
    
     @IBInspectable var livingColour:UIColor = UIColor.greenColor()
@@ -108,8 +103,7 @@ func countAliveCells (beforeArray:[[Bool]], rows:Int, columns:Int)-> Int {
     
     
     override func drawRect(rect: CGRect) {
-        //counter++
-        print(counter)
+        
         
       
         let pi:CGFloat = CGFloat(M_PI)
@@ -120,8 +114,6 @@ func countAliveCells (beforeArray:[[Bool]], rows:Int, columns:Int)-> Int {
         
        
         afterArray.twoDimensionalArray = step(beforeArray.twoDimensionalArray)
-        print(beforeArray.prettyPrint(beforeArray.twoDimensionalArray))
-        print(afterArray.prettyPrint(afterArray.twoDimensionalArray))
         //create the path
         
         let gridPath = UIBezierPath()
@@ -242,7 +234,7 @@ func countAliveCells (beforeArray:[[Bool]], rows:Int, columns:Int)-> Int {
                         let center = CGPoint(x:(bounds.width/CGFloat(rows+2)*1.5-gridWidth)+rowNum*(forrad),
                                              y:(bounds.height/CGFloat(rows+2)*1.5-gridWidth+colNum*(forrad)))
                         
-                        if (position.x>=center.x-5&&position.x<=center.x+5&&position.y>=center.y-5&&position.y<=center.y+5){
+                        if (position.x>=center.x-radius&&position.x<=center.x+radius&&position.y>=center.y-radius&&position.y<=center.y+radius){
                             let circlePath = UIBezierPath(arcCenter: center,
                                                           radius: radius,
                                                           startAngle: startAngle,
@@ -251,25 +243,26 @@ func countAliveCells (beforeArray:[[Bool]], rows:Int, columns:Int)-> Int {
                             circlePath.lineWidth = arcWidth
                             var mystr = grid[row][column]
                             var state = mystr.description()
+                            var colour:CellState = .Empty
                             
                             switch state {
-                            case "Living" :mystr.toggle(.Living)
-                            case "Empty" : mystr.toggle(.Empty)
-                            case "Born" : mystr.toggle(.Born)
-                            case "Died" : mystr.toggle(.Died)
+                            case "Living" :colour = mystr.toggle(.Living)
+                            case "Empty" : colour = mystr.toggle(.Empty)
+                            case "Born" : colour = mystr.toggle(.Born)
+                            case "Died" : colour = mystr.toggle(.Died)
                             default: break
                             }
-                            state = mystr.description()
-                            switch state {
-                            case "Living" : livingColour.setStroke()
-                            case "Empty" : emptyColour.setStroke()
-                            case "Born" : bornColour.setStroke()
-                            case "Died" : diedColour.setStroke()
-                            default : UIColor.blueColor().setStroke()
+                            
+                            switch colour {
+                            case .Living : livingColour.setStroke()
+                            case .Empty : emptyColour.setStroke()
+                            case .Born : bornColour.setStroke()
+                            case .Died : diedColour.setStroke()
 
                             
                             }
                          circlePath.stroke()
+                        setNeedsDisplay()
                         }
                         
                        
@@ -277,8 +270,8 @@ func countAliveCells (beforeArray:[[Bool]], rows:Int, columns:Int)-> Int {
                     }
                     colNum=0
                     rowNum+=1
-                }
-                */
+                }*/
+                
 
                 
              }
